@@ -1,0 +1,35 @@
+site_name: ITSLanguage API
+copyright: 2013-2015
+pages:
+- Home:
+    - 'ITSLanguage Speech API': 'index.md'
+- REST API basics:
+    - 'The REST API': 'api/index.md'
+    - 'Authentication': 'api/authentication.md'
+    - 'Roles and Permissions': 'api/permissions.md'
+    - 'Error handling': 'api/errors.md'
+- REST API:
+    - 'OAuth2': 'api/oauth2.md'
+    - 'Organisations': 'api/organisations.md'
+    - 'Students': 'api/students.md'
+    - 'Challenges': 'api/challenges.md'
+    - 'Speech Recordings': 'api/recordings.md'
+    - 'Speech Analysis': 'api/analyses.md'
+    - 'Speech Recognition': 'api/recognitions.md'
+- Websocket API:
+    - 'Websocket API': 'websocket/index.md'
+    - 'Speech Recording': 'websocket/speech_recording.md'
+    - 'Pronunciation Analyses': 'websocket/pronunciation_analyses.md'
+    - 'Choice Recognitions': 'websocket/choice_recognitions.md'
+    - 'Audio': 'websocket/audio.md'
+- Internal API:
+    - 'Permissions': 'api/permissions.md'
+    - 'Infrastructure Architecture': 'api/architecture.md'
+
+theme: readthedocs
+use_directory_urls: false
+strict: true
+
+markdown_extensions:
+    - toc:
+        anchorlink: True
