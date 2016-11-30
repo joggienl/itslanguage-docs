@@ -1,0 +1,28 @@
+@import "bootstrap.less";
+@import "custom-variables.less";
+@import "pygments.less";
+@import "nav_pager.less";
+@import "nav_toc.less";
+
+#content > *:first-child {
+  margin-top: 0;
+}
+
+/* Better space cells with API parameters */
+#content {
+  td, th {
+    padding-right: @table-cell-padding;
+    vertical-align: top;
+  }
+}
+
+/* Override default bootstrap.
+   Make sure SVG images from content are not partly hidden */
+svg:not(:root) {
+  overflow: visible;
+}
+
+img.center {
+  display: block;
+  margin: (@line-height-computed / 2) auto;
+}
