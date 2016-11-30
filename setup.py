@@ -19,6 +19,5 @@ setup(
     packages=find_packages(),
     install_requires=[
         'aafigure==0.5',
-        'mkdocs==0.14.0',
-        'webapp2==2.5.2'],
+        'mkdocs==0.14.0'],
 )
