@@ -1,0 +1,2 @@
+aafigure == 0.5
+mkdocs == 0.16.0

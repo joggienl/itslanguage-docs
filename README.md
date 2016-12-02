@@ -7,10 +7,6 @@ Instructions for building the ITS documentation website.
 Rendering a static website
 --------------------------
 
-Install the dependencies of the help site:
-
-    npm install
-
 Setup and activate the Python environment:
 
     RND=$RANDOM
