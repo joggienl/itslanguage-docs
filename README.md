@@ -1,22 +1,4 @@
 ITSLanguage developer documentation
 ===================================
 
-Instructions for building the ITS documentation website.
-
-
-Rendering a static website
---------------------------
-
-Setup and activate the Python environment:
-
-    RND=$RANDOM
-    virtualenv /tmp/venv$RND
-    source /tmp/venv$RND/bin/activate
-
-Download the dependencies and install:
-
-    pip install -e .
-
-Render the markdown sources to HTML:
-
-    mkdocs build --clean
+[See the Github Pages website.](https://itslanguage.github.io/itslanguage-docs/)
