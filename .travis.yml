@@ -1,0 +1,7 @@
+language: python
+python: '3.5'
+script: "bash ./deploy.sh"
+env:
+  global:
+  - ENCRYPTION_LABEL: "980e848ecaba"
+  - COMMIT_AUTHOR_EMAIL: "loek@d-centralize.nl"
