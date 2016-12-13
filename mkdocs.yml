@@ -17,6 +17,7 @@ pages:
     - 'Speech Recordings': 'api/recordings.md'
     - 'Speech Analysis': 'api/analyses.md'
     - 'Speech Recognition': 'api/recognitions.md'
+    - 'Users': 'api/users.md'
 - Websocket API:
     - 'Websocket API': 'websocket/index.md'
     - 'Speech Recording': 'websocket/speech_recording.md'
