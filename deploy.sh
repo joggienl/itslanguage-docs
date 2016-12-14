@@ -30,9 +30,10 @@ chmod 600 docs_deploy_key_itsl
 eval `ssh-agent -s`
 ssh-add docs_deploy_key_itsl
 
-mkdocs build
-git add site/
+SITE_DIR=".site/"
+mkdocs build -d ${SITE_DIR}
+git add ${SITE_DIR}
 git commit -m "Deploy to GitHub Pages: ${SHA}"
 
-git subtree split --prefix site/ -b gh-pages
+git subtree split --prefix ${SITE_DIR} -b gh-pages
 git push -f origin gh-pages:gh-pages
