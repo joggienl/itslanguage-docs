@@ -22,6 +22,31 @@ nl.itslanguage.pronunciation.init_analysis
 The unique analysis id is returned as a string. The id is used in other calls
 to identify the current analysis.
 
+## Initialise pronunciation challenge
+
+Before performing the analysis, the reference audio of the challenge needs to
+be prepared. This involves aligning the audio. When the RPC is called, the
+challenge is initialised asynchronously. When the challenge is to be used, the
+server automatically waits for the challenge initialisation to finish. If the
+initialisation results in an error, the error is relayed to the client.
+
+### URI
+
+```
+nl.itslanguage.pronunciation.init_challenge
+```
+
+## Fetch reference alignment
+
+The challenge that will be done is registered with a reference audio file to
+compare the student's speech with. This will need to be fetched before being able to send
+audio. This reference alignment will be given back to the caller as an intermediate result.
+
+### URI
+
+```
+nl.itslanguage.pronunciation.alignment
+```
 
 ## Initialising audio for uploading
 
@@ -45,21 +70,6 @@ audio_format | `string` | **Required** The mimetype of the audio to upload.
 Depending on the `audio_format`, additional parameters may be required.
 Please see [the audio documentation](audio.md) for which audio formats are
 supported and what parameters they require.
-
-
-## Initialise pronunciation challenge
-
-Before performing the analysis, the reference audio of the challenge needs to
-be prepared. This involves aligning the audio. When the RPC is called, the
-challenge is initialised asynchronously. When the challenge is to be used, the
-server automatically waits for the challenge initialisation to finish. If the
-initialisation results in an error, the error is relayed to the client.
-
-### URI
-
-```
-nl.itslanguage.pronunciation.init_challenge
-```
 
 ### Parameters
 
