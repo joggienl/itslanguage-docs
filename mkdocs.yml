@@ -18,7 +18,9 @@ pages:
     - 'Speech Analysis': 'api/analyses.md'
     - 'Speech Recognition': 'api/recognitions.md'
     - 'Tenants': 'api/tenants.md'
-    - 'Users': 'api/users.md'
+    - Users:
+        - 'Users': 'api/users.md'
+        - 'Email authentication': 'api/emailauth.md'
 - Websocket API:
     - 'Websocket API': 'websocket/index.md'
     - 'Speech Recording': 'websocket/speech_recording.md'
