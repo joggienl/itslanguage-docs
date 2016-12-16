@@ -26,12 +26,13 @@ scope. Example, to request an access token for the user `tenant` with password
 
 ```http
 POST https://api.itslanguage.nl/tokens HTTP/1.1
-Accept: application/x-www-form-urlencoded
+Content-Type: application/x-www-form-urlencoded
+Accept: application/json
 
 grant_type=password&username=tenant&password=secret&scope=tenant%2Ftenant
 ```
 
-Note the `Content Type` of the POST.
+Note the `Content-Type` of the POST.
 
 ### Response
 
