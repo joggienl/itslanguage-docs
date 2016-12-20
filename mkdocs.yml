@@ -7,7 +7,9 @@ pages:
 - REST API basics:
     - 'The REST API': 'api/index.md'
     - 'Authentication': 'api/authentication.md'
-    - 'Roles and Permissions': 'api/permissions.md'
+    - 'Security':
+      - 'Roles': 'api/roles.md'
+      - 'Permissions': 'api/permissions.md'
     - 'Error handling': 'api/errors.md'
 - REST API:
     - 'OAuth2': 'api/oauth2.md'
