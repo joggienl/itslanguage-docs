@@ -1,16 +1,10 @@
-# Tenant server authentication
+# OAuth2
 
-OAuth2 is implemented so a tenant may authenticate and request an access
-token. Access tokens may be distributed to end-users to grant them access. By
-using access tokens, access may be restricted by using scopes.
-
-Each tenant will receive a set of secrets called principal and credentials.
-The principal is a unique identifier (like a username) and the credentials are
-a secret, only the tenant should know (a password). A tenant can authenticate
-and receive an access token using these secrets.
+Access tokens may be requested by users to grant them access.
 
 An access token can be used to make an authorised request. To do so, the
-access token should be passed as an authorization request header.
+access token should be passed as an [authorization request
+header](#using-the-access-token).
 
 ## Obtain access token
 
@@ -20,9 +14,9 @@ OAuth2 compatible client.
 ### Request
 
 To request an access token, a POST request should be done to the access token
-API. The body should contain the username, password, grant type and optional
-scope. Example, to request an access token for the user `tenant` with password
-`secret` and scope `tenant/tenant`:
+API. The body should contain the username, password, grant type (`password`)
+and optional scope. To request an access token for the user `tenant` with
+password `secret` and scope `tenant/tenant`, the request should look like this:
 
 ```http
 POST https://api.itslanguage.nl/tokens HTTP/1.1
@@ -32,9 +26,17 @@ Accept: application/json
 grant_type=password&username=tenant&password=secret&scope=tenant%2Ftenant
 ```
 
-Note the `Content-Type` of the POST.
+!!! note
+    The scope is optional and it is best omitted when not
+    [impersonating](#impersonation).
+
+!!! note
+    The `Content-Type` of the request is different from the response.
 
 ### Response
+
+When the supplied credentials are valid, an access token is returned as a JSON
+response:
 
 ```http
 HTTP/1.1 200 OK
@@ -43,7 +45,7 @@ Cache-Control: no-store
 Pragma: no-cache
 
 {
-    "access_token": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.e30.nxowLE6zdaUjmiZKP-9K8OaXGUM_6O7LuHgUZgyAY9c",
+    "access_token": "eyJ0eXAiOiJKV1QiLCJhbGciOiJI",
     "token_type": "Bearer",
     "scope": "tenant/tenant"
 }
@@ -58,62 +60,38 @@ Example:
 ```http
 GET https://api.itslanguage.nl/organisations HTTP/1.1
 Accept: application/json
-Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.e30.nxowLE6zdaUjmiZKP-9K8OaXGUM_6O7LuHgUZgyAY9c
+Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJI
 ```
 
+In cases where it is not possible to use the `Authorization` header, the token
+can be supplied using a request parameter:
 
-# Tenant client authentication
+```http
+GET https://api.itslanguage.nl/organisations?access_token=eyJ0eXAiOiJKV1QiLCJhbGciOiJI HTTP/1.1
+```
 
-Instead of sharing the tenant's principal and credentials, a tenant client
-should request or receive an access token from the tenant server. This should
-usually happen when an end-user logs into the tenant server. How this is done
-is to be determined by the tenant. This access token can be used by the client
-to authenticate on behalf of the tenant at the REST API or the Websocket
-server. By issuing the access token to a tenant client, the tenant server
-grants the tenant client access to the ITSLanguage platform.
+!!! note
+    The example access tokens are shortened for demo purposes.
 
-In order to dispense an access token to the tenant client, the tenant server
-should request a token from the REST API. A token can be requested at three
-levels, tenant level, organisation level or student level.
+## Impersonation
 
-## Student level
+It is possible to impersonate another user by supplying a scope when
+requesting an access token. This can be convenient for a variety of reasons.
 
-This is the recommended way to request an access token. This way the access
-token is bound to a specific student so the token can only be used by that
-student. The tenant server should request an access token with a special
-scope. A student scope for the student `joe` in organisation `org` owned by
-tenant `tenant` should look like this:
-`tenant/tenant/organisation/org/student/joe`
+When a tenant wants to perform authentication for its users instead of using
+the built in authentication, the tenant can use its credentials to request
+tokens for its users. The token can be relayed to the end-user so the tenant
+actually authenticated and impersonated the user.
 
-This method should be used in production as it is the most secure method. It
-provides isolation at student level. This means that each student receives a
-different access token. Students cannot access another student's data.
+When a top level admin user wants to perform administrative tasks for a
+tenant/organisation, the admin can impersonate the appropriate
+tenant/organisation.
 
-## Organisation level
+### Example scopes
 
-Using this method, an access token is issued for an organisation. This access
-token can be used by each student in that organisation. All students in that
-organisation make use of the same account (dummy). This also means that
-students have access to each others data.
-
-When this method is chosen, a dummy student is created so the access token can
-be used. When an API call requires a student, the id `dummy` needs to be
-supplied.
-
-To create an organisation level access token for the organisation `org` owned
-by the tenant `tenant`, the scope should be `tenant/tenant/organisation/org`.
-
-## Tenant level
-
-A tenant level access token can be requested to perform administrational tasks
-like creating organisations. It is also possible to perform analyses on
-behalf of the tenant. There is no distinction between organisations or students
-so **all** students of all organisations within that tenant use the same
-account.
-
-To make this work, a dummy organisation and a dummy student are created. When
-an API call requires an organisation or a student, the id `dummy` can be given
-for the organisation and the student.
-
-To create a tenant level access token for the tenant `tenant` the scope should
-be `tenant/tenant`.
+Scope                                      | Description
+-------------------------------------------|------------
+`user/barry`                               | Top level admin user with id `barry`
+`tenant/ten`                               | Tenant with id `ten`
+`tenant/demo/organisation/org`             | Organisation `org` in tenant `demo`
+`tenant/demo/organisation/org/student/stu` | Student `stu` in organisation `org` in tenant `demo`
