@@ -6,6 +6,13 @@ powers can perform these calls.
 
 ## Create a user
 
+When creating a user, the user is created at the same level as the current
+user. This means that when a top level admin creates a user, a top level user
+is created. When the current user resides in an organisation the created user
+will be created in that organisation.
+When creating a user in a different organisation, the current user needs to
+[impersonate](oauth2.md#impersonation) the target organisation.
+
 ### URL
 
 ```http
@@ -46,7 +53,6 @@ Content-Type: application/json
   "firstName": "Najat",
   "infix": "van der",
   "lastName": "Lee",
-  "tenantId": null,
   "created": "2016-12-22T02:14:05Z",
   "updated": "2016-12-22T02:14:05Z"
 }
@@ -80,7 +86,6 @@ Content-Type: application/json
     "firstName": "Najat",
     "infix": "van der",
     "lastName": "Lee",
-    "tenantId": null,
     "created": "2016-12-22T02:14:05Z",
     "updated": "2016-12-22T02:14:05Z"
   },
@@ -89,7 +94,6 @@ Content-Type: application/json
     "firstName": "Chrissy",
     "infix": null,
     "lastName": "Haagen",
-    "tenantId": null,
     "created": "2017-01-01T14:05:05Z",
     "updated": "2017-01-01T14:05:05Z"
   }
