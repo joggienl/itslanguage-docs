@@ -40,3 +40,4 @@ strict: true
 markdown_extensions:
     - toc:
         anchorlink: True
+    - admonition:
