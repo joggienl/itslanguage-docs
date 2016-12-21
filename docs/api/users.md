@@ -21,12 +21,13 @@ POST /users HTTP/1.1
 
 ### Input
 
-Name         | Type     | Description
--------------|----------|------------
-id           | `string` | **Optional** A unique identifier. If none is given, one is generated.
-firstName    | `string` | **Required** The first name of the user.
-infix        | `string` | **Required** The infix of the user.
-lastName     | `string` | **Required** The last name of the user.
+Name         | Type       | Description
+-------------|------------|------------
+id           | `string`   | **Optional** A unique identifier. If none is given, one is generated.
+firstName    | `string`   | **Required** The first name of the user.
+infix        | `string`   | **Required** The infix of the user.
+lastName     | `string`   | **Required** The last name of the user.
+roles        | `string[]` | **Required** The names of roles to grant the user.
 
 ### Request
 
@@ -38,7 +39,8 @@ Content-Type: application/json
 {
   "firstName": "Najat",
   "infix": "van der",
-  "lastName": "Lee"
+  "lastName": "Lee",
+  "roles": ["ADMIN"]
 }
 ```
 
@@ -53,6 +55,7 @@ Content-Type: application/json
   "firstName": "Najat",
   "infix": "van der",
   "lastName": "Lee",
+  "roles": ["ADMIN"],
   "created": "2016-12-22T02:14:05Z",
   "updated": "2016-12-22T02:14:05Z"
 }
@@ -86,6 +89,7 @@ Content-Type: application/json
     "firstName": "Najat",
     "infix": "van der",
     "lastName": "Lee",
+    "roles": ["STUDENT"],
     "created": "2016-12-22T02:14:05Z",
     "updated": "2016-12-22T02:14:05Z"
   },
@@ -94,6 +98,7 @@ Content-Type: application/json
     "firstName": "Chrissy",
     "infix": null,
     "lastName": "Haagen",
+    "roles": ["TEACHER"],
     "created": "2017-01-01T14:05:05Z",
     "updated": "2017-01-01T14:05:05Z"
   }
