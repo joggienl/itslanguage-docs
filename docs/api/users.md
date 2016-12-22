@@ -104,3 +104,36 @@ Content-Type: application/json
   }
 ]
 ```
+
+
+## Get current user
+
+### URL
+
+```http
+GET /user HTTP/1.1
+```
+
+### Request
+
+```http
+GET /user HTTP/1.1
+Accept: application/json
+```
+
+### Response
+
+```http
+HTTP/1.1 201 Created
+Content-Type: application/json
+
+{
+  "id": "bgfg83bjdg62j",
+  "firstName": "Juriaan",
+  "infix": null,
+  "lastName": "Winkens",
+  "roles": ["STUDENT"],
+  "created": "2017-01-03T12:16:55Z",
+  "updated": "2017-01-03T12:16:55Z"
+}
+```
