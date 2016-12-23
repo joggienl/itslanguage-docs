@@ -8,6 +8,14 @@ the REST API. Only users with administrative powers can perform these calls.
 
 ### URL
 
+To create an emailauth for the current user:
+
+```http
+POST /user/emailauths HTTP/1.1
+```
+
+To create an emailauth for another user:
+
 ```http
 POST /users/:user/emailauths HTTP/1.1
 ```
