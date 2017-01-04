@@ -9,6 +9,9 @@ Type            | Usage
 
 ## Create a pronunciation analysis
 
+When creating a pronunciation analysis, the analysis is created as the current
+student.
+
 ### URL
 
 ```http
@@ -22,7 +25,6 @@ POST /challenges/pronunciation/:challenge/analyses HTTP/1.1
 Name        | Type       | Description
 ------------|------------|------------
 id          | `string`   | **Optional** A unique identifier for the analysis.
-studentId   | `string`   | **Required** The id of the student that supplied the audio.
 audio       | `blob`     | **Required** The actual audio. (Ogg Opus or WAV)
 score       | `float`    | **Optional** The overall score of the pronunciation between 0 and 1. Required if ``words`` is given.
 words       | `json`     | **Optional** A JSON encoded list of analysed words, forming the spoken sentence. Required if ``score`` is given.
@@ -65,10 +67,6 @@ Content-Disposition: form-data; name="audio"; filename="blob"
 Content-Type: audio/ogg
 
 <audio blob>
---4c1plRsNM5mLpzT7UvYG
-Content-Disposition: form-data; name="studentId"
-
-24
 --4c1plRsNM5mLpzT7UvYG
 Content-Disposition: form-data; name="score"
 
