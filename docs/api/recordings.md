@@ -88,6 +88,7 @@ Content-Type: application/json
 ## Create a speech recording
 
 Submit a new audio recording to persist without immediate analysis.
+The recording is created as the current student.
 
 ### URL
 
@@ -102,7 +103,6 @@ POST /challenges/speech/:challenge/recordings HTTP/1.1
 Name      | Type     | Description
 ----------|----------|------------
 id        | `string` | **Optional** The recording identifier. If none is given, one is generated.
-studentId | `string` | **Required** The id of the student that supplied the audio.
 audio     | `blob`   | **Required** The actual audio. (Ogg Opus or WAV)
 
 ### Request
@@ -119,10 +119,6 @@ Content-Disposition: form-data; name="audio"; filename="blob"
 Content-Type: audio/ogg
 
 <audio blob>
---YvHKkjjzXfysYJVHMoOAoNczae
-Content-Disposition: form-data; name="studentId"
-
-24
 --YvHKkjjzXfysYJVHMoOAoNczae--
 ```
 
