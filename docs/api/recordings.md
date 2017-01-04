@@ -38,14 +38,14 @@ Content-Type: application/json
     "created": "2014-01-28T21:25:10Z",
     "updated": "2014-01-28T21:25:10Z",
     "audioUrl": "https://api.itslanguage.nl/download/YsjdG37bUGseu8-bsJ",
-    "studentId": "24"
+    "userId": "24"
   },
   {
     "id": "14",
     "created": "2014-01-28T21:25:10Z",
     "updated": "2014-01-28T21:25:10Z",
     "audioUrl": "https://api.itslanguage.nl/download/YsjdG37bUGseu8-Xaq",
-    "studentId": "24"
+    "userId": "24"
   }
 ]
 ```
@@ -80,7 +80,7 @@ Content-Type: application/json
   "created": "2014-01-28T21:25:10Z",
   "updated": "2014-01-28T21:25:10Z",
   "audioUrl": "https://api.itslanguage.nl/download/YsjdG37bUGseu8-bsJ",
-  "studentId": "24"
+  "userId": "24"
 }
 ```
 
@@ -88,7 +88,7 @@ Content-Type: application/json
 ## Create a speech recording
 
 Submit a new audio recording to persist without immediate analysis.
-The recording is created as the current student.
+The recording is created as the current user.
 
 ### URL
 
@@ -135,6 +135,6 @@ Content-Type: application/json
   "updated": "2014-02-13T09:39:40Z",
   "created": "2014-02-13T09:39:37Z",
   "audioUrl": "https://api.itslanguage.nl/download/YsjdG37bUGseu8-bsJ",
-  "studentId": "24"
+  "userId": "24"
 }
 ```
