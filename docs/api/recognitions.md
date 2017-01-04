@@ -25,7 +25,6 @@ POST /challenges/choice/:challenge/recognitions HTTP/1.1
 Name       | Type     | Description
 -----------|----------|------------
 id         | `string` | **Optional** A unique identifier for the recognition. If none is given, one is generated.
-studentId  | `string` | **Required** The identifier of the student that supplied the audio.
 audio      | `blob`   | **Required** The actual audio. (Ogg Opus or WAV)
 recognised | `string` | **Optional** The recognised string. Omit if nothing is recognised.
 
@@ -43,10 +42,6 @@ Content-Disposition: form-data; name="audio"; filename="blob"
 Content-Type: audio/ogg
 
 <blob>
---jhgd87g7Gy3d78
-Content-Disposition: form-data; name="studentId"
-
-harry
 --jhgd87g7Gy3d78
 Content-Disposition: form-data; name="recognised"
 
