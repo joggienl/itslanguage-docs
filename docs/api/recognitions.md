@@ -11,6 +11,7 @@ Type                              | Usage
 ## Create a choice recognition
 
 Submit an audio fragment for recognition.
+The recognition is created for the current authenticated student.
 
 ### URL
 
