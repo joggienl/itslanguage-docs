@@ -10,7 +10,7 @@ Type            | Usage
 ## Create a pronunciation analysis
 
 When creating a pronunciation analysis, the analysis is created as the current
-student.
+user.
 
 ### URL
 
@@ -148,7 +148,7 @@ Content-Type: application/json
   "updated": "2014-02-13T09:39:40Z",
   "created": "2014-02-13T09:39:37Z",
   "audioUrl": "https://api.itslanguage.nl/challenges/pronunciation/test/analyses/35/audio",
-  "studentId": "24",
+  "userId": "24",
   "score": 0.75,
   "words": [
     {
@@ -223,18 +223,18 @@ GET /challenges/pronunciation/:challenge/analyses HTTP/1.1
 
 Name        | Type      | Description
 ------------|-----------|------------
-`studentId` | `string`  | **Optional** The id of the student that supplied the audio.
+`userId` | `string`  | **Optional** The id of the user that supplied the audio.
 
 ### Request
 
 ```http
-GET /challenges/pronunciation/test/analyses?studentId=24 HTTP/1.1
+GET /challenges/pronunciation/test/analyses?userId=24 HTTP/1.1
 Accept: application/json
 ```
 
 ### Response
 
-The response is a JSON list with pronunciation analyses of `studentId` '24'.
+The response is a JSON list with pronunciation analyses of `userId` '24'.
 
 Note:
 
@@ -254,7 +254,7 @@ Content-Type: application/json
     "updated": "2014-02-13T09:39:40Z",
     "created": "2014-02-13T09:39:37Z",
     "audioUrl": "https://api.itslanguage.nl/challenges/pronunciation/test/analyses/34/audio",
-    "studentId": "24",
+    "userId": "24",
     "score": 0.75,
     "words": [
       {
@@ -324,7 +324,7 @@ Content-Type: application/json
     "updated": "2014-02-13T09:39:40Z",
     "created": "2014-02-13T09:39:37Z",
     "audioUrl": "https://api.itslanguage.nl/challenges/pronunciation/test/analyses/35/audio",
-    "studentId": "24",
+    "userId": "24",
     "score": 0.75,
     "words": [
       {
@@ -366,7 +366,7 @@ Content-Type: application/json
     "updated": "2014-02-13T09:39:40Z",
     "created": "2014-02-13T09:39:37Z",
     "audioUrl": "https://api.itslanguage.nl/challenges/pronunciation/test/analyses/36/audio",
-    "studentId": "24",
+    "userId": "24",
     "score": 0.75,
     "words": [
       {
@@ -471,7 +471,7 @@ Content-Type: application/json
   "updated": "2014-02-13T09:37:40Z",
   "created": "2014-02-13T09:37:37Z",
   "audioUrl": "https://api.itslanguage.nl/challenges/pronunciation/test/analyses/25/audio",
-  "studentId": "24",
+  "userId": "24",
   "score": 0.75,
   "words": [
     {
