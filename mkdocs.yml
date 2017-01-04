@@ -15,7 +15,10 @@ pages:
     - 'OAuth2': 'api/oauth2.md'
     - 'Organisations': 'api/organisations.md'
     - 'Students': 'api/students.md'
-    - 'Challenges': 'api/challenges.md'
+    - 'Challenges':
+      - 'Speech': 'api/speech_challenges.md'
+      - 'Pronunciation': 'api/pronunciation_challenges.md'
+      - 'Choice': 'api/choice_challenges.md'
     - 'Speech Recordings': 'api/recordings.md'
     - 'Speech Analysis': 'api/analyses.md'
     - 'Speech Recognition': 'api/recognitions.md'
