@@ -25,6 +25,7 @@ pages:
     - 'Tenants': 'api/tenants.md'
     - Users:
         - 'Users': 'api/users.md'
+        - 'Basic authentication': 'api/basicauths.md'
         - 'Email authentication': 'api/emailauth.md'
 - Websocket API:
     - 'Websocket API': 'websocket/index.md'
