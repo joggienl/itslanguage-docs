@@ -11,7 +11,7 @@ Type                              | Usage
 ## Create a choice recognition
 
 Submit an audio fragment for recognition.
-The recognition is created for the current authenticated student.
+The recognition is created for the current authenticated user.
 
 ### URL
 
@@ -64,7 +64,7 @@ Location: https://api.itslanguage.nl/challenges/choice/test/recognitions/8
   "updated": "2014-02-13T09:39:40Z",
   "created": "2014-02-13T09:39:37Z",
   "challengeId": "8",
-  "studentId": "24",
+  "userId": "24",
   "audioUrl": "https://api.itslanguage.nl/challenges/choice/test/recognitions/8/audio",
   "recognised": "bike"
 }
@@ -92,7 +92,7 @@ Content-Type: application/json
     "updated": "2014-07-19T19:22:48Z",
     "created": "2014-07-19T19:22:48Z",
     "challengeId": "8",
-    "studentId": "harry",
+    "userId": "harry",
     "audioUrl": "https://api.itslanguage.nl/challenges/choice/test/recognitions/8/audio",
     "recognised": "bright side of life"
   },
@@ -101,7 +101,7 @@ Content-Type: application/json
     "updated": "2014-07-19T19:22:48Z",
     "created": "2014-07-19T19:22:48Z",
     "challengeId": "237",
-    "studentId": "arthur",
+    "userId": "arthur",
     "audioUrl": "https://api.itslanguage.nl/challenges/choice/test/recognitions/237/audio",
     "recognised": "spam"
   }
@@ -130,7 +130,7 @@ Content-Type: application/json
   "created": "2014-07-19T19:22:48Z",
   "updated": "2014-07-19T19:22:48Z",
   "challengeId": "spam",
-  "studentId": "87",
+  "userId": "87",
   "audioUrl": "https://api.itslanguage.nl/challenges/choice/test/recognitions/spam/audio",
   "recognised": null
 }
