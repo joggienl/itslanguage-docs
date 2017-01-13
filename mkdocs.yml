@@ -22,6 +22,7 @@ pages:
     - 'Speech Recordings': 'api/recordings.md'
     - 'Speech Analysis': 'api/analyses.md'
     - 'Speech Recognition': 'api/recognitions.md'
+    - 'Category': 'api/categories.md'
     - 'Tenants': 'api/tenants.md'
     - Users:
         - 'Users': 'api/users.md'
