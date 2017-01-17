@@ -131,7 +131,7 @@ Content-Type: application/json
 
 {
   "id": "category_1_1",
-  "parent": "category_1"
+  "parent": "category_1",
   "created": "2017-01-12T09:38:20Z",
   "updated": "2017-01-12T09:38:20Z",
   "name": "Category 1.1",
