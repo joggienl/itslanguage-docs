@@ -38,7 +38,6 @@ Content-Type: application/json
     "color": "#00f",
     "imageUrl": "https://api.itslanguage.nl/download/UKbsMpBsXaJUsBbK",
     "iconUrl": "https://api.itslanguage.nl/download/GdExSbs-ZVNnQUUe",
-    "categories": ["category_1_1", "category_1_2"],
     "speechChallenges": []
   },
   {
@@ -90,7 +89,6 @@ Content-Type: application/json
     "color": "#00f",
     "imageUrl": "https://api.itslanguage.nl/download/UKbsMpBsXaJUsBbK",
     "iconUrl": "https://api.itslanguage.nl/download/GdExSbs-ZVNnQUUe",
-    "categories": ["category_1_1", "category_1_2"],
     "speechChallenges": ["speech_x"]
   },
   {
